@@ -1,25 +1,25 @@
-"use client"
-import { chartData } from "@/lib/data"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-import { ChartContainer, type ChartConfig ,ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent  } from "@/components/ui/chart"
+// "use client"
+// import { chartData } from "@/lib/data"
+// import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+// import { ChartContainer, type ChartConfig ,ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent  } from "@/components/ui/chart"
 
 
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#2563eb",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
-  },
-} satisfies ChartConfig
+// const chartConfig = {
+//   desktop: {
+//     label: "Desktop",
+//     color: "#2563eb",
+//   },
+//   mobile: {
+//     label: "Mobile",
+//     color: "#60a5fa",
+//   },
+// } satisfies ChartConfig
 
 export default function SalesSummary() {
   return (
     <div>
       <h1>Sales Summary</h1>
-      <ChartContainer config={chartConfig} className="h-120 w-full">
+      {/* <ChartContainer config={chartConfig} className="h-120 w-full">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
           <XAxis
@@ -34,7 +34,7 @@ export default function SalesSummary() {
           <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
           <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
         </BarChart>
-      </ChartContainer>
+      </ChartContainer> */}
     </div>
   );
 }
