@@ -18,7 +18,7 @@
 export default function SalesSummary() {
   return (
     <div>
-      <h1>Sales Summary</h1>
+      <h1>Sales Summary Here</h1>
       {/* <ChartContainer config={chartConfig} className="h-120 w-full">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />
