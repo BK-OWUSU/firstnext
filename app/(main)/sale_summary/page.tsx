@@ -1,8 +1,8 @@
-'use client'
-import React from 'react'
-import { Bar, BarChart } from "recharts"
-import { ChartContainer, type ChartConfig } from "@/components/ui/chart"
+"use client"
 import { chartData } from "@/lib/data"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { ChartContainer, type ChartConfig ,ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent  } from "@/components/ui/chart"
+
 
 const chartConfig = {
   desktop: {
@@ -19,12 +19,22 @@ export default function SalesSummary() {
   return (
     <div>
       <h1>Sales Summary</h1>
-        <ChartContainer config={chartConfig} className="min-h-[200px] z-[-1] w-full">
-           <BarChart accessibilityLayer data={chartData}>
-             <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-             <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
-           </BarChart>
-         </ChartContainer>
+      <ChartContainer config={chartConfig} className="h-120 w-full">
+        <BarChart accessibilityLayer data={chartData}>
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+            tickFormatter={(value) => value.slice(0, 3)}
+            />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <ChartLegend content={<ChartLegendContent />} />
+          <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+          <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        </BarChart>
+      </ChartContainer>
     </div>
   );
 }
