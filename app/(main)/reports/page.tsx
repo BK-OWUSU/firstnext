@@ -1,4 +1,4 @@
-import React from 'react'
+"use client"
 import { Bar, BarChart } from "recharts"
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart"
 import { chartData } from "@/lib/data"
